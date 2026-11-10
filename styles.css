@@ -83,6 +83,50 @@ p { color: var(--text-muted); }
 .section--cream { background: var(--cream); }
 .section--sand { background: var(--sand); }
 
+/* Sticky water background — like hero parallax */
+.section--water {
+    background-image: url('water-bg.webp');
+    background-color: var(--navy);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 2;
+}
+
+.section--water .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section--water::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(10, 36, 99, 0.72);
+    pointer-events: none;
+}
+
+.section--water h2,
+.section--water h3 { color: var(--white); }
+.section--water p { color: rgba(253, 246, 236, 0.85); }
+.section--water a { color: var(--cyan-light); }
+.section--water a:hover { color: var(--white); }
+.section--water strong { color: var(--white); }
+
+.section--water .service { border-bottom-color: rgba(255,255,255,0.15); }
+.section--water .service h3 { color: var(--white); }
+
+.section--water .oasis {
+    background: rgba(255,255,255,0.08);
+    border-left-color: var(--terra-light);
+}
+.section--water .oasis__label { color: var(--terra-light); }
+
+.section--water .section__note { color: rgba(253,246,236,0.7); }
+
+.section--water .info-split__block strong { color: var(--white); }
+
 .section__note {
     margin-top: 40px;
     font-size: 15px;
@@ -902,6 +946,22 @@ p { color: var(--text-muted); }
 
     .hero__overlay { z-index: 1; }
     .hero__content { z-index: 2; }
+
+    .section--water {
+        background-attachment: scroll;
+        background-image: none;
+    }
+
+    .section--water::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: url('water-bg.webp');
+        background-size: cover;
+        background-position: center;
+        pointer-events: none;
+    }
 }
 
 /* ===========================
