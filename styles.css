@@ -949,18 +949,6 @@ p { color: var(--text-muted); }
 
     .section--water {
         background-attachment: scroll;
-        background-image: none;
-    }
-
-    .section--water::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        background-image: url('water-bg.webp');
-        background-size: cover;
-        background-position: center;
-        pointer-events: none;
     }
 }
 
