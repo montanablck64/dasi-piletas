@@ -274,18 +274,23 @@ p { color: var(--text-muted); }
 .hero__content {
     position: relative;
     z-index: 2;
-    padding: 0 24px 80px;
-    max-width: 620px;
+    padding: 0 24px 60px;
+    max-width: 720px;
 }
 
 .hero__title {
     font-family: var(--font-h);
     font-weight: 400;
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: clamp(4.5rem, 18vw, 10rem);
     color: var(--white);
-    line-height: 1;
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
+    line-height: 0.9;
+    margin-bottom: 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero__letter {
+    display: inline-block;
 }
 
 .hero__tagline {

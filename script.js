@@ -116,7 +116,6 @@
         var phone = phoneVal;
         var location = document.getElementById('location').value.trim();
         var projectType = document.getElementById('projectType').value;
-        var dimensions = document.getElementById('dimensions').value.trim() || 'No especificado';
         var machinery = document.getElementById('machinery').value;
         var details = document.getElementById('details').value.trim() || 'Sin detalles adicionales';
 
@@ -125,7 +124,6 @@
             + 'Teléfono: ' + phone + '\n'
             + 'Zona: ' + location + '\n'
             + 'Proyecto: ' + projectType + '\n'
-            + 'Medidas: ' + dimensions + '\n'
             + 'Acceso maquinaria: ' + machinery + '\n'
             + 'Detalles: ' + details + '\n\n'
             + '¿Podrían asesorarme?';
@@ -197,16 +195,21 @@
         });
 
         // Hero content — entrance sequence
-        gsap.set('.hero__logo', { y: c.reduceMotion ? 0 : -20 });
-        gsap.set('.hero__title', { y: c.reduceMotion ? 0 : 30 });
-        gsap.set('.hero__subtitle', { y: c.reduceMotion ? 0 : 20 });
-        gsap.set('.hero__ctas', { y: c.reduceMotion ? 0 : 20 });
+        gsap.set('.hero__letter', { y: c.reduceMotion ? 0 : 60, autoAlpha: 0, rotateX: c.reduceMotion ? 0 : -90 });
+        gsap.set('.hero__tagline', { y: c.reduceMotion ? 0 : 20, autoAlpha: 0 });
+        gsap.set('.hero__subtitle', { y: c.reduceMotion ? 0 : 20, autoAlpha: 0 });
+        gsap.set('.hero__ctas', { y: c.reduceMotion ? 0 : 20, autoAlpha: 0 });
 
         var heroTl = gsap.timeline({ delay: 0.3 });
         heroTl
-            .to('.hero__logo', { y: 0, autoAlpha: 1, duration: dur * 0.8 })
-            .to('.hero__title', { y: 0, autoAlpha: 1, duration: dur }, '-=0.4')
-            .to('.hero__subtitle', { y: 0, autoAlpha: 1, duration: dur * 0.7 }, '-=0.4')
+            .to('.hero__letter', {
+                y: 0, autoAlpha: 1, rotateX: 0,
+                duration: dur * 1.2,
+                stagger: 0.12,
+                ease: 'back.out(1.7)'
+            })
+            .to('.hero__tagline', { y: 0, autoAlpha: 1, duration: dur * 0.8 }, '-=0.3')
+            .to('.hero__subtitle', { y: 0, autoAlpha: 1, duration: dur * 0.7 }, '-=0.3')
             .to('.hero__ctas', { y: 0, autoAlpha: 1, duration: dur * 0.7 }, '-=0.3');
 
         // Highlights — counter-like pop
