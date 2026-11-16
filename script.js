@@ -297,6 +297,25 @@
                 }
             });
         }
+
+        // Water sections — parallax background (works on all devices)
+        if (!c.reduceMotion) {
+            gsap.utils.toArray('.section--water__bg').forEach(function (bg) {
+                gsap.fromTo(bg,
+                    { yPercent: -15 },
+                    {
+                        yPercent: 15,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: bg.parentElement,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true
+                        }
+                    }
+                );
+            });
+        }
     });
 
     // --- Lightbox ---

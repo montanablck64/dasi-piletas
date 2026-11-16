@@ -83,14 +83,21 @@ p { color: var(--text-muted); }
 .section--cream { background: var(--cream); }
 .section--sand { background: var(--sand); }
 
-/* Sticky water background — like hero parallax */
+/* Sticky water background — GSAP parallax */
 .section--water {
+    overflow: hidden;
+    background: var(--navy);
+    z-index: 2;
+}
+
+.section--water__bg {
+    position: absolute;
+    inset: -30% 0;
+    z-index: 0;
     background-image: url('water-bg.webp');
-    background-color: var(--navy);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    z-index: 2;
+    will-change: transform;
 }
 
 .section--water .container {
@@ -271,20 +278,22 @@ p { color: var(--text-muted); }
     max-width: 620px;
 }
 
-.hero__logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 24px;
-    filter: brightness(0) invert(1);
-}
-
 .hero__title {
     font-family: var(--font-h);
     font-weight: 400;
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(3rem, 8vw, 5.5rem);
     color: var(--white);
-    line-height: 1.1;
+    line-height: 1;
     margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.hero__tagline {
+    font-family: var(--font-h);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: rgba(255,255,255,.9);
+    line-height: 1.3;
+    margin-bottom: 8px;
 }
 
 .hero__subtitle {
@@ -946,10 +955,6 @@ p { color: var(--text-muted); }
 
     .hero__overlay { z-index: 1; }
     .hero__content { z-index: 2; }
-
-    .section--water {
-        background-attachment: scroll;
-    }
 }
 
 /* ===========================
