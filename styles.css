@@ -170,7 +170,7 @@ p { color: var(--text-muted); }
     gap: 16px;
 }
 
-.nav__logo img { height: 28px; width: auto; filter: brightness(0) invert(1); }
+.nav__logo img { height: 28px; width: auto; }
 
 .nav__links {
     display: none;
