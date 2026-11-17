@@ -151,7 +151,7 @@
     // Hide everything first with gsap.set — no CSS needed
     gsap.set('.reveal', { autoAlpha: 0, y: 40 });
     gsap.set('.reveal-children > *', { autoAlpha: 0, y: 30 });
-    gsap.set(['.hero__logo', '.hero__title', '.hero__subtitle', '.hero__ctas'], { autoAlpha: 0 });
+    gsap.set(['.hero__letter', '.hero__tagline', '.hero__subtitle', '.hero__ctas'], { autoAlpha: 0 });
     gsap.set('.contact-layout__info', { autoAlpha: 0 });
     gsap.set('#contactForm', { autoAlpha: 0 });
 

@@ -382,6 +382,8 @@ p { color: var(--text-muted); }
 .highlight {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
 }
 
 .highlight__number {
